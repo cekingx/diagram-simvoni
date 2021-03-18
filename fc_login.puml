@@ -1,0 +1,12 @@
+@startuml
+
+(*) --> "(input) username dan password"
+"(input) username dan password" --> "(proses) credentials"
+if "credentials benar" then 
+    --> [true] "(output) token jwt"
+    --> (*)
+else
+    --> [false] "(output) credentials salah"
+    -->(*)
+endif
+@enduml

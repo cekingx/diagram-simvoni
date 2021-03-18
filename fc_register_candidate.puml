@@ -1,0 +1,11 @@
+@startuml "Register Candidate to An Election"
+
+(*) --> "(input) pilih election"
+"(input) pilih election" --> "(input) nama, visi dan misi"
+if "more candidate" then
+    --> [true] "(input) nama, visi dan misi"
+else
+    --> [false] (*)
+endif
+
+@enduml

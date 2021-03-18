@@ -1,0 +1,13 @@
+@startuml "Voter Register to An Election"
+
+(*) --> "(input) memilih election"
+"(input) memilih election" --> "(proses) verifikasi voter"
+if "terverifikasi" then
+    --> [true] "(output) voter memiliki hak suara di election"
+    --> (*)
+else
+    --> [false] "(output) voter tidak dapat melakukan voting di election ini"
+    -->(*)
+endif
+
+@enduml

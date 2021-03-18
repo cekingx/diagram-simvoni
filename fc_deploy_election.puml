@@ -1,0 +1,9 @@
+@startuml "Super Admin Deploy Election"
+
+(*) --> "(input) memilih election"
+"(input) memilih election" --> "(proses) mengirim ether dari super admin ke wallet address election authority"
+"(proses) mengirim ether dari super admin ke wallet address election authority" --> "(proses) deploy election(smart contract) ke private blockchain menggunakan address election authority"
+"(proses) deploy election(smart contract) ke private blockchain menggunakan address election authority" --> "(proses) set candidate di election(smart contract) berdasarkan data di database"
+"(proses) set candidate di election(smart contract) berdasarkan data di database" --> (*)
+
+@enduml

@@ -1,0 +1,13 @@
+@startuml "Create Election Authority"
+
+(*) --> "(input) username, password, nama ea"
+"(input) username, password, nama ea" --> "(proses) pembuatan akun ea"
+if "username unique" then
+    --> [true] "(output) pesan akun berhasil dibuat"
+    --> (*)
+else
+    --> [false] "(output) pesan username sudah digunakan"
+    --> (*)
+endif
+
+@enduml

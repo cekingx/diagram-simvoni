@@ -1,0 +1,10 @@
+@startuml "Voter Vote in An Election"
+
+(*) --> "(input) memilih election"
+"(input) memilih election" --> "(input) memilih candidate"
+"(input) memilih candidate" --> "(proses) pengiriman ether dari super admin ke wallet address voter"
+"(proses) pengiriman ether dari super admin ke wallet address voter" --> "(proses) pemanggilan function vote pada election(smart contract) menggunakan wallet address voter"
+"(proses) pemanggilan function vote pada election(smart contract) menggunakan wallet address voter" --> "(output) vote recorded in private blockchain"
+"(output) vote recorded in private blockchain" --> (*)
+
+@enduml

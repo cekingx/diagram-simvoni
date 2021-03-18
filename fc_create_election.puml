@@ -1,0 +1,8 @@
+@startuml "Create Election by EA"
+
+(*) --> "(input) nama, deskripsi, tanggal mulai dan tanggal selesai"
+"(input) nama, deskripsi, tanggal mulai dan tanggal selesai" --> "(proses) pembuatan election"
+"(proses) pembuatan election" --> "(output) pesan election berhasil dibuat"
+"(output) pesan election berhasil dibuat" --> (*)
+
+@enduml

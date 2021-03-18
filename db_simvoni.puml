@@ -1,0 +1,70 @@
+@startuml
+
+hide circle
+skinparam linetype ortho
+
+entity "ref_user" as user {
+    * user_id : int
+    --
+    user_nama : varchar(255)
+    user_username : varchar(255)
+    user_password : varchar(255)
+    user_wallet_address : varchar(255)
+    user_user_role_id : int <<FK>>
+    user_login_at : datetime
+}
+
+entity "ref_user_role" as user_role {
+    * user_role_id : int
+    --
+    user_role_nama : varchar(255)
+}
+
+entity "ta_election" as election {
+    * election_id : int
+    --
+    election_name : varchar(255)
+    election_description : varchar(255)
+    election_authority : int <<FK>>
+    election_status : int <<FK>>
+    election_start : date
+    election_end : date
+    election_contract_address : varchar(255)
+}
+
+entity "ref_election_status" as election_status {
+    * election_status_id : int
+    --
+    election_status : varchar(255)
+}
+
+entity "ta_candidate" as candidate {
+    * candidate_id : int
+    --
+    candidate_name : varchar(255)
+    candidate_election_id : int <<FK>>
+    candidate_visi : varchar(255)
+}
+
+entity "ta_misi" as misi {
+    * misi_id : int
+    --
+    misi_deskripsi : varchar(255)
+    misi_candidate_id : int <<FK>>
+}
+
+entity "ta_pengalaman" as pengalaman {
+    * pengalaman_id : int
+    --
+    pengalaman_deskripsi : varchar(255)
+    pengalaman_candidate_id : int <<FK>>
+}
+
+user_role ||..|{ user
+election_status ||..|{ election
+user ||..|{ election
+election ||..|{ candidate
+candidate ||..|{ misi
+candidate ||..|{ pengalaman
+
+@enduml
