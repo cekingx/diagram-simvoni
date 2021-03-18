@@ -1,0 +1,35 @@
+@startuml
+
+left to right direction
+actor "Super Admin" as sa
+actor "Election Authority" as ea
+actor "Voter" as vo
+
+rectangle Simvoni {
+    usecase "Create Election Authority" as create_ea
+    usecase "Deploy Election" as deploy_election
+    usecase "Send Ether" as send_ether
+    usecase "Create Election" as create_election
+    usecase "Add Candidate to Election" as add_candidate
+    usecase "Start Election" as start_election
+    usecase "End Election" as end_election
+    usecase "Register to Election" as register_to_election
+    usecase "Vote in Election" as vote_in_election
+    usecase "View Election Result" as view_election_result
+}
+
+sa --> create_ea
+sa --> deploy_election
+sa --> send_ether
+ea --> create_election
+ea --> add_candidate
+ea --> start_election
+ea --> end_election
+vo --> register_to_election
+vo --> vote_in_election
+
+sa --> view_election_result
+ea --> view_election_result
+vo --> view_election_result
+
+@enduml
