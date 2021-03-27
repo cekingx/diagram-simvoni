@@ -1,0 +1,21 @@
+@startuml
+
+(*) --> "(proses) login"
+"(proses) login" --> "(proses) daftar ke sebuah election"
+"(proses) daftar ke sebuah election" --> "(helper) panah"
+if "diterima" then
+    --> [true] "(proses) melihat kandidat"
+    if "election dimulai" then
+        --> [true] "(proses) vote kandidat"
+        --> (*)
+    else
+        --> [false] "(proses) melihat kandidat"
+    endif
+else 
+    if "ditolak" then
+        --> [true] (*)
+    else
+        --> [false] "(helper) panah"
+endif
+
+@enduml

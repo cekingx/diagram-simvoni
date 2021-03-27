@@ -1,0 +1,15 @@
+@startuml
+
+(*) --> "(proses) login"
+"(proses) login" --> "(proses) pembuatan election"
+"(proses) pembuatan election" --> "(proses) menambahkan kandidat"
+"(proses) menambahkan kandidat" --> "(helper) panah"
+if "election di deploy oleh super admin" then
+    --> [true] "(proses) start election"
+    --> "(proses) end election"
+    --> (*)
+else
+    --> [false] "(helper) panah"
+endif
+
+@enduml

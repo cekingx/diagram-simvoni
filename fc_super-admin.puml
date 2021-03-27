@@ -1,0 +1,8 @@
+@startuml
+
+(*) --> "(proses) login"
+"(proses) login" --> "(proses) membuat akun election_authority"
+"(proses) membuat akun election_authority" --> "(proses) deployment smart contract"
+"(proses) deployment smart contract" --> (*)
+
+@enduml
