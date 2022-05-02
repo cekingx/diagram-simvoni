@@ -8,7 +8,6 @@ actor "Voter" as vo
 rectangle Simvoni {
     usecase "Create Election Authority" as create_ea
     usecase "Deploy Election" as deploy_election
-    usecase "Send Ether" as send_ether
     usecase "Create Election" as create_election
     usecase "Add Candidate to Election" as add_candidate
     usecase "Start Election" as start_election
@@ -20,7 +19,6 @@ rectangle Simvoni {
 
 sa --> create_ea
 sa --> deploy_election
-sa --> send_ether
 ea --> create_election
 ea --> add_candidate
 ea --> start_election
